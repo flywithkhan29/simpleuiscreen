@@ -1,28 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ─────────────────────────────────────────────────────────────
-//  Run standalone for preview — or import HomeScreen elsewhere
-// ─────────────────────────────────────────────────────────────
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ShopEase',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: const Color(0xFFF5F5FA),
-        fontFamily: 'Roboto',
-      ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
 // ═══════════════════════════════════════════════════════════════
 //  CONSTANTS — single source of truth for theming
 // ═══════════════════════════════════════════════════════════════
@@ -120,26 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bg,
-
-      // ── Bottom Navigation Bar ──
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          boxShadow: [BoxShadow(color: Color(0x0D000000), blurRadius: 20, offset: Offset(0, -4))],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _navItem(Icons.home_rounded, 'Home', true),
-              _navItem(Icons.explore_outlined, 'Explore', false),
-              _navItem(Icons.favorite_border_rounded, 'Wishlist', false),
-              _navItem(Icons.person_outline_rounded, 'Profile', false),
-            ],
-          ),
-        ),
-      ),
 
       body: SafeArea(
         child: ListView(
@@ -529,27 +486,6 @@ class _HomeScreenState extends State<HomeScreen> {
           onAdd: _addToCart,
         ),
       ),
-    );
-  }
-
-  // ─────────────────────────────────────────────────────────
-  //  BOTTOM NAV ITEM
-  // ─────────────────────────────────────────────────────────
-  Widget _navItem(IconData icon, String label, bool active) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: active ? AppColors.primary : AppColors.textMuted, size: 24),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 11,
-            fontWeight: active ? FontWeight.w600 : FontWeight.w500,
-            color: active ? AppColors.primary : AppColors.textMuted,
-          ),
-        ),
-      ],
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'main_screen.dart';
+import 'signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -198,12 +200,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Login Successful'),
-                          backgroundColor: Color(0xFF3F51B5),
-                          behavior: SnackBarBehavior.floating,
-                          duration: Duration(seconds: 2),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainScreen(),
                         ),
                       );
                     }
@@ -240,6 +240,39 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                ),
+                const SizedBox(height: 32),
+
+                // ── Sign Up Link ──
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don't have an account? ",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color(0xFF7B7B8E),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'Sign Up',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF3F51B5),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
