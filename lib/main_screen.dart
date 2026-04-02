@@ -71,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
           vertical: 8,
         ),
         decoration: BoxDecoration(
-          color: isActive ? AppColors.primary.withOpacity(0.1) : Colors.transparent,
+          color: isActive ? AppColors.primary.withValues(alpha: 0.1) : Colors.transparent,
           borderRadius: BorderRadius.circular(14),
         ),
         child: Row(
@@ -173,7 +173,7 @@ class SearchScreen extends StatelessWidget {
               Center(
                 child: Column(
                   children: [
-                    Icon(Icons.search_rounded, size: 64, color: AppColors.textMuted.withOpacity(0.3)),
+                    Icon(Icons.search_rounded, size: 64, color: AppColors.textMuted.withValues(alpha: 0.3)),
                     const SizedBox(height: 12),
                     const Text(
                       'Discover something new',
@@ -242,13 +242,13 @@ class CartScreen extends StatelessWidget {
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.08),
+                        color: AppColors.primary.withValues(alpha: 0.08),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.shopping_cart_outlined,
                         size: 48,
-                        color: AppColors.primary.withOpacity(0.4),
+                        color: AppColors.primary.withValues(alpha: 0.4),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -340,7 +340,7 @@ class ProfileScreen extends StatelessWidget {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.1),
+                      color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: const Icon(Icons.person_rounded, size: 32, color: AppColors.primary),
@@ -404,7 +404,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Colors.red.withOpacity(0.1),
+                    color: Colors.red.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Icon(Icons.logout_rounded, size: 20, color: Colors.redAccent),
@@ -443,7 +443,7 @@ class ProfileScreen extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.08),
+              color: AppColors.primary.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, size: 20, color: AppColors.primary),

@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
             width: 44,
             height: 44,
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: AppColors.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(14),
             ),
             child: const Icon(Icons.person_rounded, color: AppColors.primary, size: 24),
@@ -283,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: b.colorStart.withOpacity(0.3),
+                        color: b.colorStart.withValues(alpha: 0.3),
                         blurRadius: 16,
                         offset: const Offset(0, 8),
                       ),
@@ -300,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 120,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.1),
+                            color: Colors.white.withValues(alpha: 0.1),
                           ),
                         ),
                       ),
@@ -312,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 80,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.08),
+                            color: Colors.white.withValues(alpha: 0.08),
                           ),
                         ),
                       ),
@@ -338,7 +338,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               b.subtitle,
                               style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.white.withOpacity(0.85),
+                                color: Colors.white.withValues(alpha: 0.85),
                               ),
                             ),
                             const SizedBox(height: 16),
@@ -430,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         itemCount: categories.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 16),
+        separatorBuilder: (_, _) => const SizedBox(width: 16),
         itemBuilder: (ctx, i) {
           final c = categories[i];
           return SizedBox(
@@ -524,7 +524,7 @@ class _ProductCard extends StatelessWidget {
               child: Stack(
                 children: [
                   Center(
-                    child: Icon(product.icon, size: 48, color: AppColors.primary.withOpacity(0.5)),
+                    child: Icon(product.icon, size: 48, color: AppColors.primary.withValues(alpha: 0.5)),
                   ),
                   // Wishlist heart
                   Positioned(
@@ -534,7 +534,7 @@ class _ProductCard extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(Icons.favorite_border_rounded, size: 16, color: AppColors.textMuted),
